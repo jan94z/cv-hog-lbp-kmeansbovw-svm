@@ -1,6 +1,8 @@
-# data
+# Data
 /data/**
-/data.json
+!/data/Grapevine_Leaves_Image_Dataset_Citation_Request.txt
+
+# Private documentation
 /test.md
 
 # Byte-compiled / optimized / DLL files
