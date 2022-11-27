@@ -31,6 +31,7 @@ def HOG(arr, orient, ppc, cpb, vis=True, fv=False):
                   cells_per_block=cpb,
                   visualize=vis,
                   feature_vector=fv)
+  
   return feats.reshape(-1, orient)
 
 def LBP(arr, radius, npoints, nbins, range_bins):
@@ -42,11 +43,9 @@ def LBP(arr, radius, npoints, nbins, range_bins):
   features = skfeat.local_binary_pattern(gray,
                                       R=radius,
                                       P=npoints)
-  feats, edges = np.histogram(features,
-                              bins=nbins,
-                              range=range_bins)
 
-  return feats.reshape(1,-1)
+  return np.histogram(features, bins=nbins, range=range_bins)[0].reshape(1,-1)
+
 class kmeans_bovw():
   """
   Bag of visual words using Kmeans clustering.

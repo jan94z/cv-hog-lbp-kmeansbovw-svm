@@ -141,7 +141,6 @@ def classification():
   img = img[:,:,0:3] # rgba -> rgb
   hog = utils.HOG(img, orient=model['orients'], ppc=model['ppc'], cpb=model['cpb'])
   hog = bovw.predict(hog)
-  hog = hog.reshape(1,-1)
   lbp = utils.LBP(arr=img, radius=model['radius'], npoints=model['npoints'], nbins=model['nbins'], range_bins=model['range_bins'])
   features = np.hstack((hog,lbp))
   features = normalizer.transform(features)
