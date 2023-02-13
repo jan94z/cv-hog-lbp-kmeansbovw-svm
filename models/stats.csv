@@ -1,2 +1,2 @@
 name,validation_acc,evaluation_acc,kmeans_clusters,kmeans_maxiter,hog_orients,hog_ppc0,hog_ppc1,hog_cpb0,hog_cpb1,lbp_radius,lbp_npoints,lbp_nbins,lbp_rangebins0,lbp_rangebins1,svm_c,svm_maxiter
-example,0.86,0.9,5,1000,8,8,8,1,1,1,8,128,0,255,0.1,1000
+example,0.8400000000000001,0.9199999999999999,5,1000,8,8,8,1,1,1,8,128,0,255,0.1,1000

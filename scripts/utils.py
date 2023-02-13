@@ -16,7 +16,7 @@ class imageloader():
     def __getitem__(self, idx):
         self.img_path = self.filenames[idx]
         rgba_image = skio.imread(self.img_path)
-        image = rgba_image[:,:,0:3] # rgba -> rgb
+        image = skcol.rgba2rgb(rgba_image)
         label = self.labels[idx]
         return image, label
 

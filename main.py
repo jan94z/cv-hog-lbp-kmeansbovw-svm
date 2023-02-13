@@ -3,9 +3,11 @@ import json
 import argparse
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from scripts import utils
 from scripts.prepare_data import dataprep
 from skimage.io import imread
+from skimage.color import rgba2rgb
 from sklearn.svm import LinearSVC
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix
@@ -138,7 +140,7 @@ def classification():
 
   # get and transform the image
   img = imread(parser.i[1])
-  img = img[:,:,0:3] # rgba -> rgb
+  img = rgba2rgb(img)
   hog = utils.HOG(img, orient=model['orients'], ppc=model['ppc'], cpb=model['cpb'])
   hog = bovw.predict(hog)
   lbp = utils.LBP(arr=img, radius=model['radius'], npoints=model['npoints'], nbins=model['nbins'], range_bins=model['range_bins'])
@@ -147,10 +149,14 @@ def classification():
 
   # classify
   prediction = int(svm.predict(features))
+  plt.figure()
+  plt.imshow(img)
+  plt.title(f"Prediction: {classes[str(prediction)]}")
+  plt.show()
   print(classes[f'{prediction}'])
 
 if __name__ == '__main__':
-  # parser to use terminal
+  # parser
   _parser = argparse.ArgumentParser(description='Extracting command line arguments', add_help=True)
   _parser.add_argument('--d', '--dataprep', action='store_const', const=True)
   _parser.add_argument('--t', '--training', action='store_const', const=True)

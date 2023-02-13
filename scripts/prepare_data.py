@@ -9,7 +9,7 @@ def dataprep():
 
   subdir = [f.path for f in os.scandir(datapath) if f.is_dir()]
 
-  # rename files as spaces and round brackets cause problems in the terminal
+  # remove spaces and brackets from filenames
   for folder in subdir:
       for file in os.listdir(folder):
         old = os.path.join(folder, file)
