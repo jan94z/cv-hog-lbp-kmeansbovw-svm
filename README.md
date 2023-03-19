@@ -1,7 +1,7 @@
 # cv-hog-lbp-kmeansbovw-svm 
  _Computer Vision - Histogram of Oriented Gradients - Local Binary Patterns - K-Means Bag of Visual Words - Support Vector Machine_
 ## Objective
-This is a project of mine to practice and reiterate traditional computer vision techniques as well as some Python functionalities. A classifier is built to distinguish the leaves of five different grapevine varieties, using the data of Koklu et al [^reference]. The Histogram of Oriented Gradients (HOG) and the Local Binary Patterns (LBP) are applied to extract features from the image. After extracting, the HOG features are clustered by the K-Means algorithm. Then, the final feature vector is created by stacking the histogram of cluster occurences and the histogram of the LBP features. Finally, this feature vector is used by the linear support vector machine (SVM) to classify the image.
+This is a project of mine to practice and reiterate traditional computer vision techniques as well as some Python functionalities, that I picked up in a course at the University of Bonn. A classifier is built to distinguish the leaves of five different grapevine varieties, using the data of Koklu et al [^reference]. The Histogram of Oriented Gradients (HOG) and the Local Binary Patterns (LBP) are applied to extract features from the image. After extracting, the HOG features are clustered by the K-Means algorithm. Then, the final feature vector is created by stacking the histogram of cluster occurences and the histogram of the LBP features. Finally, this feature vector is used by the linear support vector machine (SVM) to classify the image.
 ## Usage
 Created on Ubuntu 22.04 and Python 3.10.6.
 ### Data
